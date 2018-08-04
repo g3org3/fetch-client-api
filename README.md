@@ -6,14 +6,17 @@ create a fetch client api 💫
 
 ### installation
 
-```
-npm i fetch-client-api
-npm i node-fetch
+```sh
+# 🔥
+yarn add fetch-client-api node-fetch
+
+# or good old npm
+npm i -S fetch-client-api node-fetch
 ```
 
 ### Examples
 
-```sh
+```js
 const fetch = require('node-fetch')
 
 // import lib
