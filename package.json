@@ -1,9 +1,18 @@
 {
   "name": "fetch-client-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create your own client api",
   "main": "src/index.js",
-  "keywords": ["node-fetch", "fetch", "request", "api", "client", "client-api", "http", "fetch-client-api"],
+  "keywords": [
+    "node-fetch",
+    "fetch",
+    "request",
+    "api",
+    "client",
+    "client-api",
+    "http",
+    "fetch-client-api"
+  ],
   "author": "George <7jagjag@gmail.com>",
   "license": "MIT",
   "dependencies": {}
