@@ -58,8 +58,16 @@ const createClient = fetch => ({baseUrl = '', headers = {}, queryParams = {}} = 
   const request = _request({ fetch, headers: customHeaders, baseUrl, queryParams })
   return {
     ..._actions,
-    actions: _actions,
     request,
+    setup: ({headers = {}} = {}) => {
+      const request = _request({ fetch, headers: {...customHeaders, ...headers}, baseUrl, queryParams })
+      return {
+        get: (endpoint, body, mapfn, grabfn) => request(_actions.get, endpoint, body, mapfn, grabfn),
+        post: (endpoint, body, mapfn, grabfn) => request(_actions.post, endpoint, body, mapfn, grabfn),
+        put: (endpoint, body, mapfn, grabfn) => request(_actions.put, endpoint, body, mapfn, grabfn),
+        delete: (endpoint, body, mapfn, grabfn) => request(_actions.delete, endpoint, body, mapfn, grabfn),
+      }
+    },
     api: {
       get: (endpoint, body, mapfn, grabfn) => request(_actions.get, endpoint, body, mapfn, grabfn),
       post: (endpoint, body, mapfn, grabfn) => request(_actions.post, endpoint, body, mapfn, grabfn),
